@@ -1,0 +1,29 @@
+server:
+  port: 8081
+spring:
+  main:
+    banner-mode: off
+    log-startup-info: false
+  datasource:
+    url: jdbc:postgresql://localhost:5432/movie_platform
+    username: postgres
+    password: 123456aaAA
+    platform: postgresql
+  jpa:
+    show-sql: false
+    open-in-view: false
+    hibernate:
+      ddl-auto: validate
+    properties:
+      hibernate:
+      dialect: org.hibernate.dialect.PostgreSQLDialect
+  application:
+    name: movie-service
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: ${EUREKA_URI:http://localhost:8761/eureka}
+    fetch-registry: true
+  instance:
+    preferIpAddress: true
